@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
 	position += current_velocity * delta
 	
 	update_animations()
+	update_rotation()
 	
 	 
 func update_animations() -> void:
@@ -17,3 +18,11 @@ func update_animations() -> void:
 		anim_player.play("move")
 	else:
 		anim_player.play("idle")
+
+func update_rotation()-> void:
+	if move_dir == Vector2.ZERO :
+		return
+	if move_dir.x >= 0.1 :
+		visuals.scale = Vector2(1.0,1.0)
+	else:
+		visuals.scale = Vector2(-1.0,1.0)
