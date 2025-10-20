@@ -8,8 +8,19 @@ radius = 9.0
 
 [node name="PlayerWellRounded" instance=ExtResource("1_d1m2c")]
 script = ExtResource("2_r27qr")
+dash_duration = 0.3
+dash_speed_multi = 2.5
+dash_cooldown = 1.5
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -8)
 scale = Vector2(0.8, 0.53)
 shape = SubResource("CapsuleShape2D_d1m2c")
+
+[node name="DashTimer" type="Timer" parent="." index="3"]
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." index="4"]
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
