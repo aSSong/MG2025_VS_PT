@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://86a8fkjfr4ji"]
+
+[ext_resource type="PackedScene" uid="uid://b70x40q4vtevq" path="res://scenes/player/player_well_rounded.tscn" id="1_264km"]
+[ext_resource type="Resource" uid="uid://clhc21ydtf3in" path="res://resources/units/players/stats_player_bunny.tres" id="2_1qac6"]
+
+[node name="PlayerBunny" instance=ExtResource("1_264km")]
+stats = ExtResource("2_1qac6")

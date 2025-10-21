@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://nv0kpcu014e0"]
+
+[ext_resource type="PackedScene" uid="uid://b70x40q4vtevq" path="res://scenes/player/player_well_rounded.tscn" id="1_madyv"]
+[ext_resource type="Resource" uid="uid://b3jbcsgdm32l1" path="res://resources/units/players/stats_player_knight.tres" id="2_ov7do"]
+
+[node name="PlayerKnight" instance=ExtResource("1_madyv")]
+stats = ExtResource("2_ov7do")
