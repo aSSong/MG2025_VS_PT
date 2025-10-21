@@ -1,13 +1,14 @@
 extends Unit
 class_name Player
 
-@export var dash_duration := 0.3
+@export var dash_duration := 0.5
 @export var dash_speed_multi := 2.5
-@export var dash_cooldown := 1.5
+@export var dash_cooldown := 0.5
 
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown_timer: Timer = $DashCooldownTimer
 @onready var collision: CollisionShape2D = $CollisionShape2D
+@onready var trail: Trail = %Trail
 
 var move_dir: Vector2
 var is_dashing := false
@@ -50,6 +51,7 @@ func update_rotation()-> void:
 func start_dash() -> void:
 	is_dashing = true
 	dash_timer.start()
+	trail.start_trail()
 	visuals.modulate.a = 0.5
 	collision.set_deferred("disabled",true)
 	
